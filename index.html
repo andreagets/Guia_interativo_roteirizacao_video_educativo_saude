@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roteirização de Vídeos Educativos em Saúde • Profª. Drª. Andréa Soares Rocha da Silva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0A3641;
+      --primary-light: #125B6C;
+      --primary-dark: #051E24;
+      --secondary: #0D9488;
+      --secondary-light: #14B8A6;
+      --secondary-soft: #F0FDFA;
+      --accent: #E07A5F;
+      --accent-soft: #FDF2E9;
+      --dark: #0F172A;
+      --gray-light: #F8FAFC;
+      --gray-border: #E2E8F0;
+      --text-main: #334155;
+      --text-muted: #64748B;
+      --card-bg: #FFFFFF;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.12);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F1F5F9;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-card::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .author-badge-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .badge-author {
+      background: var(--secondary);
+      color: #FFFFFF;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-target {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #E2E8F0;
+    }
+
+    .title-group h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .title-group p.lead {
+      font-size: 1.02rem;
+      color: #CBD5E1;
+      max-width: 950px;
+      margin-bottom: 20px;
+    }
+
+    .pnp-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 22px;
+      font-size: 0.92rem;
+      color: #F8FAFC;
+    }
+
+    .pnp-box strong {
+      color: var(--accent);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .kpi-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .kpi-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .kpi-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--secondary-light);
+    }
+
+    .kpi-lbl {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #CBD5E1;
+      margin-top: 2px;
+    }
+
+    /* SECTION BASICS */
+    .section-box {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-border);
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title .step-pill {
+      background: var(--primary);
+      color: #FFF;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* BLOCO 1: NAVEGADOR DE FASES DE PRODUÇÃO */
+    .phases-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .phase-btn {
+      padding: 10px 16px;
+      background: #F1F5F9;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .phase-btn:hover {
+      background: #E2E8F0;
+      color: var(--primary);
+    }
+
+    .phase-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .phase-panel {
+      background: var(--gray-light);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-border);
+      padding: 22px;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .phase-panel h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .phase-subitems {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .subcard {
+      background: #FFFFFF;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .subcard h4 {
+      font-size: 0.9rem;
+      color: var(--primary-light);
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .subcard p {
+      font-size: 0.81rem;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    /* BLOCO 2: MATRIZ DE PLANOS CINEMATOGRÁFICOS */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .plan-card {
+      background: var(--gray-light);
+      border: 2px solid transparent;
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .plan-card:hover, .plan-card.active {
+      background: #FFFFFF;
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .plan-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #CCFBF1;
+      color: #0F766E;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .plan-card h4 {
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .plan-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .plan-detail-banner {
+      margin-top: 16px;
+      background: var(--secondary-soft);
+      border: 1px solid #99F6E4;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      color: #115E59;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* BLOCO 3: PRINCIPIOS DE APRENDIZAGEM MULTIMIDIA */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .principle-box {
+      background: #FFFFFF;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      border-top: 3px solid var(--secondary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .principle-box h4 {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .principle-box p {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .principle-box .health-tip {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--gray-border);
+      font-size: 0.76rem;
+      color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    /* BLOCO 4: SIMULADOR DE MODELOS DE ROTEIRO */
+    .models-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .model-btn {
+      padding: 8px 14px;
+      background: #E2E8F0;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .model-btn.active {
+      background: var(--secondary);
+      color: #FFFFFF;
+    }
+
+    .model-viewer {
+      background: #0F172A;
+      color: #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      font-size: 0.83rem;
+      overflow-x: auto;
+    }
+
+    .script-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .script-table th, .script-table td {
+      border: 1px solid #334155;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 0.8rem;
+    }
+
+    .script-table th {
+      background: #1E293B;
+      color: var(--secondary-light);
+      font-weight: 700;
+    }
+
+    .script-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* BLOCO 5: CHECKLIST DE GRAVAÇÃO PARA O PROFISSIONAL DE SAÚDE */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .check-card {
+      background: #FFFFFF;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .check-card h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .check-card ul {
+      list-style: none;
+    }
+
+    .check-card li {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--gray-border);
+      font-size: 0.8rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .check-card li:last-child {
+      border-bottom: none;
+    }
+
+    .check-icon {
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    .footer-card {
+      background: #061A20;
+      color: #94A3B8;
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      font-size: 0.84rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-col h5 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .footer-col p, .footer-col li {
+      font-size: 0.8rem;
+      color: #CBD5E1;
+      margin-bottom: 5px;
+    }
+
+    .references-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 22px;
+      margin-top: 18px;
+    }
+
+    .references-header {
+      color: #F8FAFC;
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ref-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .ref-item {
+      font-size: 0.78rem;
+      color: #CBD5E1;
+      line-height: 1.45;
+      padding-left: 14px;
+      text-indent: -14px;
+    }
+
+    .copyright-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 20px;
+      margin-top: 22px;
+    }
+
+    .copyright-header {
+      color: #F8FAFC;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .copyright-text {
+      color: #94A3B8;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    .citation-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin-bottom: 16px;
+    }
+
+    .citation-title {
+      font-weight: 700;
+      color: var(--secondary-light);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .citation-code {
+      font-family: monospace, monospace;
+      font-size: 0.78rem;
+      color: #E2E8F0;
+      word-break: break-all;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 14px;
+      text-align: center;
+      font-size: 0.76rem;
+      color: #64748B;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .header-card { padding: 22px 18px; }
+      .title-group h1 { font-size: 1.6rem; }
+      .section-box { padding: 18px; }
+      .phases-nav { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- CABEÇALHO -->
+  <header class="header-card">
+    <div class="author-badge-top">
+      <span class="badge-author">Autoria: Profª. Drª. Andréa Soares Rocha da Silva</span>
+      <span class="badge-target">Público-Alvo: Profissionais de Saúde em Formação e em Atuação</span>
+    </div>
+
+    <div class="title-group">
+      <h1>Roteirização de Vídeos Educativos para Educação em Saúde</h1>
+      <p class="lead">Diretrizes teórico-práticas de Design Instrucional, Teoria da Aprendizagem Multimídia e linguagem audiovisual para a elaboração de videoaulas formativas e humanizadas (Santos, 2021; Pereira, 2017; Mayer, 2009; Filatro, 2008).</p>
+    </div>
+
+    <div class="pnp-box">
+      <strong>Pergunta Norteadora Principal:</strong> Como planejar, estruturar e roteirizar videoaulas para a educação em saúde aliando rigor técnico-pedagógico, clareza clínica e mitigação de sobrecarga cognitiva para estudantes e profissionais em formação e em atuação? (Santos, 2021; Pereira, 2017; Arroio; Giordan, 2006).
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-val">3</div>
+        <div class="kpi-lbl">Fases de Produção</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">7 a 10</div>
+        <div class="kpi-lbl">Minutos Ideais</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">4</div>
+        <div class="kpi-lbl">Planos de Câmera</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">3</div>
+        <div class="kpi-lbl">Modelos de Roteiro</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOCO 1: DEFINIÇÃO & FLUXO DE PRODUÇÃO -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Etapa 1</span>
+      O que é um Roteiro & As Fases do Processo Audiovisual
+    </h2>
+    <p class="section-desc">O roteiro é o documento de planejamento que alinha conteúdo, narrativa pedagógica e ações audiovisuais, servindo de guia para o docente e a equipe técnica (Santos, 2021; Campos, 2007). Navegue pelas 3 fases operacionais:</p>
+
+    <div class="phases-nav">
+      <button class="phase-btn active" onclick="showPhase('pre', this)">1. Pré-Produção (Planejamento & Roteiro)</button>
+      <button class="phase-btn" onclick="showPhase('prod', this)">2. Produção (Gravação em Estúdio/Campo)</button>
+      <button class="phase-btn" onclick="showPhase('pos', this)">3. Pós-Produção (Edição & Validação)</button>
+    </div>
+
+    <div id="phaseContent" class="phase-panel">
+      <!-- Conteúdo injetado via JS -->
+    </div>
+  </section>
+
+  <!-- BLOCO 2: ENQUADRAMENTO E LINGUAGEM VISUAL NA SAÚDE -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Etapa 2</span>
+      Gramática Visual: Planos de Câmera e suas Funções na Saúde
+    </h2>
+    <p class="section-desc">A mirada e o enquadramento de câmera determinam a intenção comunicativa, variando entre a demonstração técnica, a conexão afetiva e a visualização anatômica (Santos, 2021; Jullier, 2002). Clique em cada plano:</p>
+
+    <div class="plans-grid">
+      <div class="plan-card active" onclick="selectPlan(0)">
+        <span class="plan-tag">Contextualização</span>
+        <h4>Plano Geral (Aberto)</h4>
+        <p>Apresenta o profissional de corpo inteiro integrado ao ambiente de prática clínica ou hospitalar (Santos, 2021).</p>
+      </div>
+
+      <div class="plan-card" onclick="selectPlan(1)">
+        <span class="plan-tag">Interação Direta</span>
+        <h4>Plano Médio (Cintura para Cima)</h4>
+        <p>Ideal para explicações teóricas, entrevistas e diálogo próximo com o paciente ou aluno (Santos, 2021; Pereira, 2017).</p>
+      </div>
+
+      <div class="plan-card" onclick="selectPlan(2)">
+        <span class="plan-tag">Aspecto Emotivo</span>
+        <h4>Plano Próximo (Busto / Ombros)</h4>
+        <p>Enfatiza expressões faciais, humanização do cuidado, empatia e tomada de decisão ética (Santos, 2021).</p>
+      </div>
+
+      <div class="plan-card" onclick="selectPlan(3)">
+        <span class="plan-tag">Foco Clínico</span>
+        <h4>Plano Detalhe (Close-up)</h4>
+        <p>Enquadra estritamente um procedimento: punção venosa, curativo, manipulação articular ou manuseio de EPI (Santos, 2021).</p>
+      </div>
+    </div>
+
+    <div class="plan-detail-banner" id="planDetailBanner">
+      <span id="planDetailText"><strong>Aplicação no Cuidado em Saúde:</strong> O Plano Geral situa a equipe multiprofissional no leito ou na Unidade Básica de Saúde, mostrando a organização geral do cenário e biossegurança (Santos, 2021).</span>
+    </div>
+  </section>
+
+  <!-- BLOCO 3: DESIGN INSTRUCIONAL E COGNIÇÃO MULTIMÍDIA -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Etapa 3</span>
+      Princípios da Aprendizagem Multimídia Aplicados à Saúde
+    </h2>
+    <p class="section-desc">A memória de trabalho humana possui limitações biológicas e processa em média até sete informações simultâneas (Filatro, 2008). O roteiro deve respeitar os princípios cognitivos de Mayer (2009) para evitar dispersão e sobrecarga (Pereira, 2017; Santos, 2021):</p>
+
+    <div class="principles-grid">
+      <div class="principle-box">
+        <h4>Princípio da Coerência</h4>
+        <p>Elimine excessos de termos decorativos, músicas de fundo estridentes ou cenários visualmente poluídos que disputam atenção (Mayer, 2009).</p>
+        <div class="health-tip">Na Saúde: Evite paramentos coloridos fora de contexto ou ruídos sonoros de fundo durante a explicação de protocolos clínicos.</div>
+      </div>
+
+      <div class="principle-box">
+        <h4>Princípio da Redundância</h4>
+        <p>Não apresente texto escrito idêntico à narração oral completa (legenda corrida na íntegra gera duplo esforço desnecessário) (Mayer, 2009; Pereira, 2017).</p>
+        <div class="health-tip">Na Saúde: Em vez de transcrever as falas, insira apenas palavras-chave ou dosagens farmacológicas em destaque (lettering).</div>
+      </div>
+
+      <div class="principle-box">
+        <h4>Princípio da Sinalização</h4>
+        <p>Insira marcas e recursos metacomunicativos (vinhetas, caixas de alerta, setas anatômicas) que guiem o olhar do estudante (Mayer, 2009; Pereira, 2017).</p>
+        <div class="health-tip">Na Saúde: Alerte graficamente sobre 'Contraindicações Críticas' e 'Pontos de Atenção' no manejo de pacientes graves.</div>
+      </div>
+
+      <div class="principle-box">
+        <h4>Princípio da Personalização</h4>
+        <p>Adote estilo conversacional e linguagem dialógica ('você', 'nós'), aproximando o docente do estudante (Mayer, 2009; Mendonça; Gruber, 2020).</p>
+        <div class="health-tip">Na Saúde: Problematize situações reais: "Imagine que você acabou de receber um paciente com dispneia aguda..."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 4: MODELOS DE ROTEIRO & ESTRUTURA DIDÁTICA -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Etapa 4</span>
+      Estruturação Didática & Modelos Práticos de Roteirização
+    </h2>
+    <p class="section-desc">A videoaula eficiente na educação em saúde organiza-se na sequência: <strong>Introdução</strong> (situação-problema), <strong>Desenvolvimento</strong> (conceituação e raciocínio clínico) e <strong>Revisão/Fechamento</strong> (síntese e aplicação prática) (Santos, 2021). Compare os formatos de roteiro:</p>
+
+    <div class="models-tabs">
+      <button class="model-btn active" onclick="showModel('tabela')">Modelo em Tabela (Recomendado)</button>
+      <button class="model-btn" onclick="showModel('corrido')">Modelo Texto Corrido</button>
+      <button class="model-btn" onclick="showModel('storyboard')">Modelo Storyboard Visual</button>
+    </div>
+
+    <div id="modelViewer" class="model-viewer">
+      <!-- Injetado dinamicamente -->
+    </div>
+  </section>
+
+  <!-- BLOCO 5: CHECKLIST OPERACIONAL PARA O EDUCADOR EM SAÚDE -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Etapa 5</span>
+      Checklist de Gravação: Postura, Figurino e Cenário Clínico
+    </h2>
+    <p class="section-desc">Orientações práticas para docentes e preceptores antes de acionar a câmera (Santos, 2021; Pereira, 2017):</p>
+
+    <div class="checklist-grid">
+      <div class="check-card">
+        <h4><span class="check-icon">✓</span> Figurino & Apresentação</h4>
+        <ul>
+          <li>Evitar roupas muito estampadas, tecidos xadrez, listrados ou com brilho excessivo que geram distorções na câmera (Santos, 2021).</li>
+          <li>Contrastar a roupa com o fundo do estúdio; se usar jaleco branco, preferir fundos com tonalidades suaves e contrastantes (Santos, 2021).</li>
+          <li>Evitar brincos grandes ou colares barulhentos que atritem no microfone de lapela (Santos, 2021).</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4><span class="check-icon">✓</span> Cenário & Ambiência</h4>
+        <ul>
+          <li>Garantir iluminação frontal adequada sem sombras profundas no rosto (Santos, 2021).</li>
+          <li>Eliminar poluição visual: retirar lixeiras, formulários soltos ou transeuntes desavisados no fundo (Santos, 2021).</li>
+          <li>Em caso de simulação clínica, checar previamente se todos os insumos (luvas, seringas, modelos anatômicos) estão posicionados à mão (Santos, 2021).</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4><span class="check-icon">✓</span> Ritmo, Fala & Teleprompter</h4>
+        <ul>
+          <li>Duração alvo entre 7 e 10 minutos por videoaula para evitar perda de retenção e fadiga cognitiva (Santos, 2021; Pereira, 2017).</li>
+          <li>Fazer pausas deliberadas após perguntas clínicas instigantes para permitir reflexão ao aluno (Santos, 2021).</li>
+          <li>Caso utilize teleprompter, manter olhar constante na linha da lente para preservar a sensação de contato visual direto (Pereira, 2017).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & REFERÊNCIAS COMPLETAS ABNT -->
+  <footer class="footer-card">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Autoria & Responsabilidade Técnica</h5>
+        <p><strong>Profª. Drª. Andréa Soares Rocha da Silva</strong></p>
+        <p>Especialista em Educação e Tecnologias na Saúde</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Público-Alvo</h5>
+        <p>Profissionais de saúde em formação e em atuação, docentes, preceptores de residência e conteudistas de cursos em saúde.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Eixos Teórico-Metodológicos</h5>
+        <p>• Design Instrucional e Aprendizagem Multimídia (Mayer, 2009; Filatro, 2008)</p>
+        <p>• Linguagem Audiovisual e Planos de Gravação (Santos, 2021; Pereira, 2017)</p>
+        <p>• Metodologia Dialógica e Educação Médica (Mendonça; Gruber, 2020; Arroio; Giordan, 2006)</p>
+      </div>
+    </div>
+
+    <!-- REFERÊNCIAS ABNT BASEADAS NAS FONTES FORNECIDAS -->
+    <div class="references-section">
+      <div class="references-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        Referências Bibliográficas (Normas ABNT)
+      </div>
+      <ul class="ref-list">
+        <li class="ref-item">ANG, T.; VIEIRA, S.; KFOURI, A. <strong>Vídeo Digital</strong>: uma introdução. São Paulo: Editora SENAC, 2007.</li>
+        <li class="ref-item">ARROIO, A.; GIORDAN, M. O Vídeo Educativo: Aspectos da Organização do Ensino. <strong>Educação em Química e Multimídia</strong>, n. 24, nov. 2006. Disponível em: &lt;http://qnesc.sbq.org.br/online/qnesc24/eqm1.pdf&gt;. Acesso em: 10 jul. 2010.</li>
+        <li class="ref-item">BELLONI, M. L. <strong>Educação a distância</strong>. Campinas: Autores Associados, 2003.</li>
+        <li class="ref-item">DALLACOSTA, A.; TAROUCO, L. M. R.; DUTRA, R. L. de S. A Utilização da Indexação de Vídeos com MPEG-7 e sua Aplicação na Educação. <strong>RENOTE</strong>: Revista Novas Tecnologias na Educação, Porto Alegre, v. 2, n. 1, p. 1-10, mar. 2004. Disponível em: &lt;http://www.cinted.ufrgs.br/renote/mar2004/artigos/35-autilizacao.pdf&gt;. Acesso em: 10 jul. 2010.</li>
+        <li class="ref-item">FILATRO, A. <strong>Design instrucional contextualizado</strong>: educação e tecnologia. São Paulo: Senac São Paulo, 2007.</li>
+        <li class="ref-item">FILATRO, A. <strong>Design instrucional na prática</strong>. São Paulo: Pearson Education do Brasil, 2008.</li>
+        <li class="ref-item">JULLIER, L. <strong>L'analyse de séquences</strong>. Paris: Armand Colin Cinéma, 2002.</li>
+        <li class="ref-item">MACHADO, D. V.; BELMONTE, V. N.; TAVARES, B. M. Uma metodologia para produção de videoaulas de apoio didático no processo de ensino aprendizagem em física. In: SIMPÓSIO NACIONAL DE ENSINO DE FÍSICA, 22., 2017, São Carlos. <strong>Anais [...]</strong> São Carlos: USP, 2017.</li>
+        <li class="ref-item">MAYER, R. <strong>Multimedia learning</strong>. Cambridge: Cambridge University Press, 2009.</li>
+        <li class="ref-item">MAZZEU, I. R.; AMBRÓZIO, M. Processos de produção e distribuição de vídeos na SEAD-UFSCAR. In: SIMPÓSIO INTERNACIONAL DE EDUCAÇÃO A DISTÂNCIA (SIED); ENCONTRO DE EDUCADORES EM EDUCAÇÃO A DISTÂNCIA (EnPED), 2012, São Carlos. <strong>Anais do SIED:EnPED</strong>, São Carlos: UFSCar, 2012. p. 1-16.</li>
+        <li class="ref-item">MENDONÇA, I. T. M.; GRUBER, C. <strong>Princípios de design instrucional</strong>. Livro didático da UC4 - Produção de Recursos Educacionais. Especialização em Tecnologias para Educação Profissional, Instituto Federal de Santa Catarina, Campus Araranguá, 2020.</li>
+        <li class="ref-item">MORAN, J. M. <strong>Novas tecnologias e mediação pedagógica</strong>. Campinas: Papirus, 2000.</li>
+        <li class="ref-item">PALMA, R. <strong>O que é, porque e como fazer roteiro?</strong> Estúdio NTE: dicas para produção de videoaulas. Santa Maria: NTE/UFSM, 2021. Disponível em: &lt;https://ntetube.nte.ufsm.br/v/1590153892&gt;. Acesso em: 22 mar. 2021.</li>
+        <li class="ref-item">PEREIRA, V. C. Uma proposta de instrumento de roteirização de videoaulas à luz da teoria instrucional e da aprendizagem multimídia. <strong>Texto Livre: Linguagem e Tecnologia</strong>, Belo Horizonte, v. 10, n. 1, p. 178-197, jan./jun. 2017. DOI: 10.17851/1983-3652.10.1.178-197.</li>
+        <li class="ref-item">SANTOS, T. N. dos. <strong>Guia para roteirização de videoaulas</strong>. Santa Maria: Universidade Federal de Santa Maria (UFSM), Pró-Reitoria de Graduação, Centro de Tecnologia Educacional (CTE), 2021. Disponível em: &lt;https://www.ufsm.br/app/uploads/sites/358/2021/11/Guia-para-Roteirizacao-de-Videoaulas.pdf&gt;. Acesso em: 23 set. 2026.</li>
+        <li class="ref-item">SARTORI, A. S.; ROESLER, J. <strong>Educação superior a distância</strong>: gestão da aprendizagem e da produção de materiais didáticos impressos e on-line. Tubarão: Unisul, 2005.</li>
+        <li class="ref-item">UNIVERSIDADE DO ESTADO DA BAHIA (UNEB). <strong>Produção de Videoaulas Online</strong>. Salvador: UNEB / LED, [s.d.]. Material instrucional de apoio.</li>
+      </ul>
+    </div>
+
+    <!-- DECLARAÇÃO DE DIREITOS AUTORAIS E USO -->
+    <div class="copyright-section">
+      <div class="copyright-header">© 2026 Andréa Soares Rocha da Silva. Todos os direitos reservados.</div>
+      <p class="copyright-text">
+        Este infográfico interativo foi concebido e desenvolvido pela Profª. Drª. Andréa Soares Rocha da Silva exclusivamente como recurso pedagógico e formativo para profissionais de saúde em formação e em atuação. Não é permitida sua reprodução, redistribuição, publicação, modificação, adaptação ou comercialização por terceiros sem a autorização prévia e expressa da autora. É autorizada a sua visualização para fins educacionais, sendo compulsória a preservação integral da autoria e a correta citação institucional do recurso.
+      </p>
+
+      <div class="citation-box">
+        <div class="citation-title">Forma de Citação do Conteúdo (Normas ABNT):</div>
+        <div class="citation-code">
+          SILVA, Andréa Soares Rocha da. Roteirização de Vídeos Educativos para Educação em Saúde. 2026. Infográfico Interativo. Disponível em: https://andreagets.github.io/roteirizacao-videos-saude. Acesso em: 23 set. 2026.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Recurso Educacional Interativo • Estruturado com base em Santos (2021), Pereira (2017) e Mayer (2009).
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // BANCO DE DADOS DAS FASES OPERACIONAIS
+  const phaseData = {
+    pre: {
+      title: "1. Pré-Produção: O Alicerce Pedagógico e a Escrita do Roteiro",
+      items: [
+        { title: "Definição do Objetivo & Público", desc: "Delimitação estrita do que o profissional de saúde deve aprender ao assistir ao vídeo, adotando linguagem dialógica condizente com seu nível de atuação (Santos, 2021; Pereira, 2017)." },
+        { title: "Elaboração do Roteiro Técnico-Didático", desc: "Materialização das falas, enquadramentos de câmera, textos de apoio e materiais práticos necessários antes de qualquer gravação (Santos, 2021; Pereira, 2017)." },
+        { title: "Planejamento dos Materiais de Apoio", desc: "Separação antecipada de insumos clínicos, simuladores e lâminas de apoio para evitar cortes imprevistos durante a gravação (Santos, 2021)." }
+      ]
+    },
+    prod: {
+      title: "2. Produção: Execução, Gravação e Cenografia",
+      items: [
+        { title: "Gravação em Estúdio ou Campo", desc: "Filmagem dos takes seguindo estritamente as tomadas planejadas, com microfonação adequada e checagem de iluminação sem sombras (Santos, 2021; UNEB)." },
+        { title: "Comunicação e Postura", desc: "Apresentação com empatia, mantendo o tom conversacional e ritmo pausado para facilitar o entendimento de conceitos complexos (Santos, 2021; Mayer, 2009)." },
+        { title: "Captação de Imagens Complementares (B-Roll)", desc: "Gravação de planos detalhe de equipamentos, procedimentos e manifestações clínicas que serão sobrepostos à fala do professor (Pereira, 2017)." }
+      ]
+    },
+    pos: {
+      title: "3. Pós-Produção: Edição, Grafismos e Validação Pedagógica",
+      items: [
+        { title: "Corte e Organização dos Takes", desc: "Eliminação de erros e montagem sequencial linear ou modular do conteúdo de acordo com o roteiro (Mazzeu; Ambrózio, 2012; Pereira, 2017)." },
+        { title: "Inserção de Lettering e Efeitos", desc: "Adição de palavras-chave, infográficos, setas explicativas e efeitos suaves de transição (como fade in/out) (Santos, 2021; Jullier, 2002)." },
+        { title: "Validação Pedagógica e Publicação", desc: "Revisão do conteúdo por especialistas para garantir conformidade científica, clareza didática e publicação em ambiente virtual (AVA) (UNEB; Filatro, 2008)." }
+      ]
+    }
+  };
+
+  function showPhase(key, btn) {
+    const data = phaseData[key];
+    const container = document.getElementById('phaseContent');
+    
+    let html = `<h3>${data.title}</h3><div class="phase-subitems">`;
+    data.items.forEach(item => {
+      html += `
+        <div class="subcard">
+          <h4>${item.title}</h4>
+          <p>${item.desc}</p>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    container.innerHTML = html;
+
+    document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+  }
+
+  // INTERAÇÃO COM OS PLANOS DE CÂMERA
+  const planDetails = [
+    "<strong>Aplicação no Cuidado em Saúde (Plano Geral):</strong> Situa o profissional de saúde e a equipe no leito, ambulatório ou sala de vacinação, permitindo enxergar a dinâmica de biossegurança e organização do espaço de atendimento (Santos, 2021).",
+    "<strong>Aplicação no Cuidado em Saúde (Plano Médio):</strong> Padrão áureo para explanações conceituais e entrevistas com pacientes simulados; enquadra da cintura para cima, conferindo equilíbrio entre expressão corporal e foco no conteúdo (Santos, 2021; Pereira, 2017).",
+    "<strong>Aplicação no Cuidado em Saúde (Plano Próximo):</strong> Foca nos ombros e rosto do preceptor ou do paciente, destacando nuances de empatia, comunicação de más notícias e escuta clínica qualificada (Santos, 2021).",
+    "<strong>Aplicação no Cuidado em Saúde (Plano Detalhe):</strong> Fecha rigorosamente sobre a mão do examinador ou sobre o instrumental cirúrgico/clínico, assegurando visibilidade exata da angulação de agulhas, palpação ou suturas (Santos, 2021)."
+  ];
+
+  function selectPlan(index) {
+    const cards = document.querySelectorAll('.plan-card');
+    cards.forEach((c, i) => c.classList.toggle('active', i === index));
+    document.getElementById('planDetailText').innerHTML = planDetails[index];
+  }
+
+  // MODELOS DE ROTEIRO
+  const modelContents = {
+    tabela: `
+      <p style="color: #94A3B8; margin-bottom: 8px;"><strong>Modelo em Duas Colunas (Tabela):</strong> Recomendado pela literatura por separar claramente os estímulos visuais das instruções verbais (Santos, 2021; Pereira, 2017; Mazzeu; Ambrózio, 2012).</p>
+      <table class="script-table">
+        <thead>
+          <tr>
+            <th style="width: 10%;">Cena</th>
+            <th style="width: 45%;">Vídeo / Ações & Enquadramento</th>
+            <th style="width: 45%;">Áudio / Locução Dialógica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Plano Médio:</strong> Professora no ambulatório. Lettering inferior com nome e especialidade. Efeito Fade In gradual.</td>
+            <td>"Olá, colega! Hoje vamos revisar a técnica correta de higienização das mãos na prevenção de infecções hospitalares."</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Plano Detalhe (Insert):</strong> Foco nas mãos sob a torneira, demonstrando a fricção interdigital dos dedos.</td>
+            <td>"Observe como cada etapa deve durar pelo menos 20 segundos para cobrir todas as superfícies cutâneas."</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Plano Médio:</strong> Retorno da professora. Destaque na lateral para checklist em tópicos na tela.</td>
+            <td>"Lembre-se dos cinco momentos preconizados pela OMS para higienização durante a assistência clínica."</td>
+          </tr>
+        </tbody>
+      </table>
+    `,
+    corrido: `
+      <p style="color: #94A3B8; margin-bottom: 8px;"><strong>Modelo Texto Corrido:</strong> O conteúdo e as indicações visuais são redigidos em formato de prosa sequencial, indicando as ações em parênteses ou marcas (Santos, 2021).</p>
+      <div style="background: rgba(255,255,255,0.05); padding: 14px; border-radius: 8px; line-height: 1.6; font-family: sans-serif;">
+        <p><strong>[CENA 1 - PLANO MÉDIO - SALA CLÍNICA]</strong></p>
+        <p>&lt;Professora Andréa&gt;: "Olá, profissionais! Nesta videoaula vamos analisar os critérios de gravidade da pneumonia adquirida na comunidade." (Mudar ângulo de câmera).</p>
+        <p><strong>[CENA 2 - PLANO DETALHE / SLIDE]</strong></p>
+        <p>(Entra na tela o escore CURB-65 com destaque para a letra C de Confusão Mental).</p>
+        <p>&lt;Professora Andréa (em OFF)&gt;: "O primeiro parâmetro avaliado é a presença de confusão mental aguda através do mini-exame do estado mental..."</p>
+      </div>
+    `,
+    storyboard: `
+      <p style="color: #94A3B8; margin-bottom: 8px;"><strong>Modelo Storyboard:</strong> Articula cada sequência de fala a uma ilustração visual em quadrinhos ou rascunho de tela (Santos, 2021; Pereira, 2017).</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px;">
+        <div style="background: #1E293B; border: 1px dashed #475569; padding: 12px; border-radius: 6px; text-align: center;">
+          <div style="height: 70px; background: #334155; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 0.75rem; color: #94A3B8;">[Quadro 1: Busto Docente]</div>
+          <p style="font-size: 0.74rem;">Abertura com pergunta desafiadora sobre caso clínico agudo.</p>
+        </div>
+        <div style="background: #1E293B; border: 1px dashed #475569; padding: 12px; border-radius: 6px; text-align: center;">
+          <div style="height: 70px; background: #334155; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 0.75rem; color: #94A3B8;">[Quadro 2: Close Estetoscópio]</div>
+          <p style="font-size: 0.74rem;">Demonstração da ausculta pulmonar com simulação sonora.</p>
+        </div>
+        <div style="background: #1E293B; border: 1px dashed #475569; padding: 12px; border-radius: 6px; text-align: center;">
+          <div style="height: 70px; background: #334155; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 0.75rem; color: #94A3B8;">[Quadro 3: Infográfico Síntese]</div>
+          <p style="font-size: 0.74rem;">Tela final com fluxo decisório de encaminhamento.</p>
+        </div>
+      </div>
+    `
+  };
+
+  function showModel(type) {
+    document.getElementById('modelViewer').innerHTML = modelContents[type];
+    document.querySelectorAll('.model-btn').forEach(btn => {
+      btn.classList.remove('active');
+      if(btn.getAttribute('onclick').includes(type)) btn.classList.add('active');
+    });
+  }
+
+  // Inicializações automáticas
+  showPhase('pre', document.querySelector('.phase-btn.active'));
+  showModel('tabela');
+</script>
+
+</body>
+</html>
